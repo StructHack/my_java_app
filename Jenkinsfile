@@ -1,8 +1,5 @@
 pipeline{
   agent any
-  tools{
-    gradle
-  }
   environment{
     NEW_VERSION= '1.3.3'
   }
