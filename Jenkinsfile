@@ -1,20 +1,29 @@
 pipeline{
+
+
   agent any
+  tools{
+    'gradlew-8.14'
+  }
   stages{
-    stage('build'){
+    stage("build jar"){
       steps{
-        echo "Building the application"
+        script{
+          sh 'gradlew build'
+          echo "building the application"
+        }
       }
     }
-    stage("test"){
+    
+    stage("deploy"){
       steps{
-        echo "testing the application"
-      }
-    }
-    stage("deploy"{
-      steps{
-          echo "deploying the app"
+        script{
+          echo "deploying the application"
+        }
       }
     }
   }
+
+
+  
 }
