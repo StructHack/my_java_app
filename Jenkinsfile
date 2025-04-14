@@ -1,29 +1,12 @@
-pipeline{
-
-
-  agent any
-  tools{
-    'gradlew-8.14'
+pipeline {
+  agent {
+    docker { image 'node:16-alpine' }
   }
-  stages{
-    stage("build jar"){
-      steps{
-        script{
-          sh 'gradlew build'
-          echo "building the application"
-        }
-      }
-    }
-    
-    stage("deploy"){
-      steps{
-        script{
-          echo "deploying the application"
-        }
+  stages {
+    stage('Test') {
+      steps {
+        sh 'node --version'
       }
     }
   }
-
-
-  
 }
