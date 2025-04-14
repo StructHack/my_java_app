@@ -25,10 +25,9 @@ pipeline{
 
       steps{
         echo "deploying the application"
-          echo "${USER} :::: ${PASSWORD}"
+    
         }
       }
       
     }
-  }
 }
